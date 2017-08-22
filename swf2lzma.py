@@ -49,7 +49,7 @@ def compress(infile, outfile):
 
     zheader = list(struct.unpack("<12B", swf_data[0:12]))
     zheader[0] = ord('Z')
-    zheader[3] = 13
+    zheader[3] = ord(swf_data[3])
     zheader[8]  = (zsize)       & 0xFF
     zheader[9]  = (zsize >> 8)  & 0xFF
     zheader[10] = (zsize >> 16) & 0xFF
